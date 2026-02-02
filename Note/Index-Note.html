@@ -1,102 +1,118 @@
-<!DOCTYPE html> 
-    <!-- 宣告文件類型 -->
-    <!-- 用於告訴瀏覽器此文件是 HTML5 文件 -->
-    <!-- 如果不寫這一行，瀏覽器可能無法正確解析 HTML5 的語法和功能 -->
+<!DOCTYPE html>
+<!-- 宣告文件類型 -->
+<!-- 用於告訴瀏覽器此文件是 HTML5 文件 -->
+<!-- 如果不寫這一行，瀏覽器可能無法正確解析 HTML5 的語法和功能 -->
 <html lang="zh-TW">
-    <!-- <html> 根目錄 -->
-    <!-- 所有東西都須放在Html標籤內，類似python中的main函數 -->
-    <!-- lang="zh-TW" 指定語言為繁體中文 -->
-    <head>
-        <!-- 這段註解說明了 head 區塊的作用 -->
-        <!-- 用於提供瀏覽器有關於網站的資訊，是使用者看不到的部分 -->
-        <meta charset="UTF-8">
-            <!-- 設定字符編碼為 UTF-8 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- 設定視口大小 -->
-        <title>我的個人網站</title>
-            <!-- 設定網頁標題，會顯示在瀏覽器的標籤頁上 -->
-        <link rel="stylesheet" href="style.css">
-            <!-- 連結外部 CSS 檔案 -->
-    </head>
+<!-- <html> 根目錄 -->
+<!-- 所有東西都須放在Html標籤內，類似python中的main函數 -->
+<!-- lang="zh-TW" 指定語言為繁體中文 -->
 
-    <body>
-        <!-- 這段註解說明了 body 區塊的作用 -->
-        <!-- 用於放置網頁的主要內容，是使用者可以看到和互動的部分 -->
-        <!-- 包括文字、圖片、按鈕等 -->
-        <!-- <nav>、<header>、<section>、<footer> 分別代表，-->
-        <!-- 導航欄、頁首、內容區塊、頁尾 -->
-        <!-- 這四個被稱為「語意化標籤」-->
-        <!-- 作用不只是讓網頁結構更清晰，便於閱讀和維護 -->
-        <!-- 也告訴瀏覽器這些區塊的用途 -->
-        <!-- 此外，<div> 是一個通用容器(General Division)，用於分組其他元素 -->
-        <nav>
-            <!-- 導航欄 Navigation bar -->
-            <!-- 用於放置導航連結，例如選單列表、目錄等 -->
-            <!-- <ul>：無序列表(Bulleted List)，用於顯示無明顯前後關係的項目列表 -->
-            <!-- 必須與<li>配合使用，與 <ol>有序列表(Ordered List) 相對 -->
-            <!-- <li>：列表項目(List Item)，用於定義列表中的每一項 -->
-            <!-- 必須作為<ul>或<ol>的子元素搭配使用 -->
-            <div class="logo">MyPortfolio</div>
-            <ul>
-                <li><a href="#about">關於我</a></li>
-                <li><a href="#portfolio">作品集</a></li>
-                <li><a href="#contact">聯絡方式</a></li>
-            </ul>
-        </nav>
+<head>
+    <!-- 這段註解說明了 head 區塊的作用 -->
+    <!-- 用於提供瀏覽器有關於網站的資訊，是使用者看不到的部分 -->
+    <meta charset="UTF-8">
+    <!-- 設定字符編碼為 UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 設定視口大小 -->
+    <title>我的個人網站</title>
+    <!-- 設定網頁標題，會顯示在瀏覽器的標籤頁上 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 連結外部 CSS 檔案 -->
+</head>
 
-        <header id="home">
-            <!-- 頁首 Header -->
-            <!-- 用於放置網站的主要標題、簡介、搜尋列等 -->
-            <h1>你好，我是 [你的名字]</h1>
-            <!-- 標題 Heading -->
-            <!-- HTML 提供了六個標題標籤，從 <h1> 到 <h6> -->
-            <!-- 用於定義不同層級的標題，並告訴瀏覽器這段文字的重要性 -->
-            <!-- <h1>：主標題，通常只有一個 -->
-            <!-- <h2>：次標題，通常用於章節標題 -->
-            <!-- <h3>：小標題，通常用於章節下的小節標題，用於卡片內的標題 -->
-            <!-- 字體大小由CSS控制，HTML標籤只負責語意 -->
-            <p>攝影師 | 學生 | 探索者</p>
-            <!-- 段落 Paragraph -->
-            <!-- 用於定義段落，通常包含一段文字或內容 -->
-            <!-- 瀏覽器會自動在<P>標籤前後添加空白行 -->
-        </header>
+<body>
+    <!-- 這段註解說明了 body 區塊的作用 -->
+    <!-- 用於放置網頁的主要內容，是使用者可以看到和互動的部分 -->
+    <!-- 包括文字、圖片、按鈕等 -->
+    <!-- <nav>、<header>、<section>、<footer> 分別代表，-->
+    <!-- 導航欄、頁首、內容區塊、頁尾 -->
+    <!-- 這四個被稱為「語意化標籤」-->
+    <!-- 作用不只是讓網頁結構更清晰，便於閱讀和維護 -->
+    <!-- 也告訴瀏覽器這些區塊的用途 -->
+    <!-- 此外，<div> 是一個通用容器(General Division)，用於分組其他元素 -->
+    <nav>
+        <!-- 導航欄 Navigation bar -->
+        <!-- 用於放置導航連結，例如選單列表、目錄等 -->
+        <!-- <ul>：無序列表(Bulleted List)，用於顯示無明顯前後關係的項目列表 -->
+        <!-- 必須與<li>配合使用，與 <ol>有序列表(Ordered List) 相對 -->
+        <!-- <li>：列表項目(List Item)，用於定義列表中的每一項 -->
+        <!-- 必須作為<ul>或<ol>的子元素搭配使用 -->
+        <div class="logo">MyPortfolio</div>
+        <ul>
+            <li><a href="#about">關於我</a></li>
+            <li><a href="#portfolio">作品集</a></li>
+            <li><a href="#contact">聯絡方式</a></li>
+        </ul>
+    </nav>
 
-        <section id="portfolio">
-            <!-- 內容區塊 Section -->
-            <!-- 用於分隔不同的內容區域，就像房子中不同的房間 -->
-            <!-- 每個section通常會搭配一個標題 <h2> ~ <h6> -->
-            <!-- 可用於放置作品集、文章、圖片集等 -->
-            <h2>精選作品</h2>
-            
-            <div class="portfolio-grid">
+    <header id="home">
+        <!-- 頁首 Header -->
+        <!-- 用於放置網站的主要標題、簡介、搜尋列等 -->
+        <h1>你好，我是 [你的名字]</h1>
+        <!-- 標題 Heading -->
+        <!-- HTML 提供了六個標題標籤，從 <h1> 到 <h6> -->
+        <!-- 用於定義不同層級的標題，並告訴瀏覽器這段文字的重要性 -->
+        <!-- <h1>：主標題，通常只有一個 -->
+        <!-- <h2>：次標題，通常用於章節標題 -->
+        <!-- <h3>：小標題，通常用於章節下的小節標題，用於卡片內的標題 -->
+        <!-- 字體大小由CSS控制，HTML標籤只負責語意 -->
+        <p>攝影師 | 學生 | 探索者</p>
+        <!-- 段落 Paragraph -->
+        <!-- 用於定義段落，通常包含一段文字或內容 -->
+        <!-- 瀏覽器會自動在<p>標籤前後添加空白行 -->
+    </header>
 
-                <div class="card photo-card">
-                    <span class="badge photo">📷 攝影</span>
-                    <!-- <span> -->
-                    <img src="https://placehold.co/600x400/333/FFF?text=Photo+Sample" alt="攝影作品">
-                    <div class="card-info">
-                        <h3>城市光影</h3>
-                        <p>攝於台北信義區，使用 Sony A7III</p>
-                    </div>
+    <section id="portfolio">
+        <!-- 內容區塊 Section -->
+        <!-- 用於分隔不同的內容區域，就像房子中不同的房間 -->
+        <!-- 每個section通常會搭配一個標題 <h2> ~ <h6> -->
+        <!-- 可用於放置作品集、文章、圖片集等 -->
+        <h2>精選作品</h2>
+
+        <div class="portfolio-grid">
+
+            <div class="card photo-card">
+                <span class="badge photo">📷 攝影</span>
+                <!-- <span> 行內容器標籤 inline container -->
+                <!-- 通常用於將文件中一小部分的文字或元素包裝成一個群組，便於後續設定樣式 -->
+                <!-- 其跟<div>的差別在於，<span> 不會自動換行、僅佔用自身寬度且不會破壞排版 -->
+                <!-- 如果想要將文章的某一段文字加上顏色，就會用到<span>標籤 -->
+                <img src="https://placehold.co/600x400/333/FFF?text=Photo+Sample" alt="攝影作品">
+                <!-- <img> 圖片標籤 -->
+                <!-- 屬於空元素(Void element)的一種，用於在網頁中顯示圖片 -->
+                <!-- src：圖片來源。可以是圖片網址，也可以是本機圖片路徑 -->
+                <!-- alt：圖片替代文字，當圖片無法顯示時，就會顯示alt中的文字。-->
+                <!-- 在編寫時，就算只是裝飾用的圖片也建議加上alt -->
+                <!-- alt=""(空的alt)可以避免出現語音輔助工具讀出檔名，也屬於SEO(搜尋引擎優化)的一環 -->
+                <div class="card-info">
+                    <h3>城市光影</h3>
+                    <p>攝於台北信義區，使用 Sony A7III</p>
                 </div>
-
-                <div class="card academic-card">
-                    <span class="badge academic">🎓 學術</span>
-                    <img src="https://placehold.co/600x400/224488/FFF?text=Academic+Paper" alt="學術專案">
-                    <div class="card-info">
-                        <h3>永續能源研究</h3>
-                        <p>探討核能與再生能源的平衡策略</p>
-                    </div>
-                </div>
-
             </div>
-        </section>
 
-        <footer id="contact">
-            <p>聯絡我：email@example.com</p>
-            <p>&copy; 2026 My Portfolio</p>
-        </footer>
+            <div class="card academic-card">
+                <span class="badge academic">🎓 學術</span>
+                <img src="https://placehold.co/600x400/224488/FFF?text=Academic+Paper" alt="學術專案">
+                <div class="card-info">
+                    <h3>永續能源研究</h3>
+                    <p>探討核能與再生能源的平衡策略</p>
+                </div>
+            </div>
 
-    </body>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <!-- 頁尾 Footer -->
+        <!-- 相當於房子的後院，會放在頁面或區塊的底部 -->
+        <!-- 用於放置版權資訊、聯絡方式、社群媒體連結等 -->
+        <p>聯絡我：email@example.com</p>
+        <p>&copy; 2026 My Portfolio</p>
+        <!-- &copy; 是 HTML 實體 (HTML Entity)，用於顯示版權符號 © -->
+        <!-- 實體由「 & 」開頭、「 ; 」結尾，中間是實體的名稱或代碼 -->
+        <!-- 常用實體：&lt; (<), &gt; (>), &amp; (&), &quot; ("), &apos; (') -->
+    </footer>
+
+</body>
 
 </html>
