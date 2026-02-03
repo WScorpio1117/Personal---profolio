@@ -1,0 +1,51 @@
+HTML 實體 (HTML Entity)
+
+1. 甚麼是 HTML 實體？
+HTML 實體是一段以 " & " (ampersand) 開頭，並以 " ; " (semicolon) 結尾的代碼。
+
+為什麼需要它？主要有兩個原因：
+
+a. 保留特定字元 (Reserved Characters)：
+有些符號在 HTML 中有特殊意義 (例如 <!-- " < " --> 和 " > " 用來定義標籤)，如果你直接在文字中打這些符號，瀏覽器會誤以為是標籤而導致顯示錯誤。
+
+b. 顯示鍵盤上無法輸入的字元：
+有些符號在鍵盤上找不到 (例如版權符號 ©)，或者需要特殊的空格。
+
+2. 如何使用？
+表示出 HTML 實體有兩種方式：使用「實體名稱」或「實體編號」。
+
+語法結構：
+
+a. 實體名稱 (Entity Name)：
+&entity_name;
+(較好記，但在極舊的瀏覽器可能不支援)
+
+b. 實體編號 (Entity Number)：
+&#entity_number;
+(支援度最好)
+
+ex: 要顯示 "小於" 符號 ( <!-- " < " --> ) 寫法：&lt; 或 &#60;
+
+3. 常見的 HTML 實體列表：
+以下是開發中最常使用的實體符號：
+
+符號 | 描述 (Description) | 實體名稱 (Entity Name) | 實體編號 (Entity Number)
+a. " " | 不換行空格 (Non-breaking space) | &nbsp; | &#160;
+b. " <!-- " < " --> " | 小於 (Less than) | &lt; | &#60;
+c. " > " | 大於 (Greater than) | &gt; | &#62;
+d. " & " | 和號 (Ampersand) | &amp; | &#38;
+e. " " " | 雙引號 (Double quotation mark) | &quot; | &#34;
+f. " ' " | 單引號 (Single quotation mark) | &apos; | &#39;
+g. " © " | 版權符號 (Copyright) | &copy; | &#169;
+
+4. 相關注意事項：
+
+a. 大小寫敏感：HTML 實體名稱 **是有區分大小寫** 的。
+例如 &copy; 會顯示 ©，但 &COPY; 可能無效。
+
+b. 關於空格：在 HTML 中，**連續輸入多個空白鍵只會被視為一個空格**。
+如果你需要強制顯示多個空格，必須使用 &nbsp; (Non-Breaking SPace)。
+此外，&nbsp; 還能防止文字在該空格處被自動換行。
+
+c. 名稱 vs 編號：通常建議使用實體名稱 (如 &lt;)，因為它比較好記憶。
+除非是很罕見的符號，才需要查表使用編號。

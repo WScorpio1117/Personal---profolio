@@ -1,0 +1,128 @@
+HTML - 空元素 (Void Elements)
+1. 甚麼是空元素？
+空元素是指沒有結束標籤 (Closing Tag) 的 HTML 元素。
+它們不能包含 **任何內容(如文字或其他標籤)** ，因為它們本身就是一個完整的獨立單元。
+簡單來說，一般標籤有「開始」和「結束」，中間包著內容，例如：
+
+<p>Test</p>
+<p>標籤，包含開頭與結尾，且中間可包裹著內容
+
+    但空元素只有「開始」，沒有內容也不需要結束，例如：
+
+    <img src="C:\FCU-Onedrive\OneDrive - 逢甲大學\圖片\2024.7.17 電腦背景\Arcaea\77072400_p0.png">
+    <img>標籤，屬於Void Element的一種，只有開頭，沒有結尾。且中間不可包裹著內容
+
+    2. 如何使用？
+    使用空元素非常簡單，只需要寫標籤名稱即可。通常依賴屬性 (Attributes) 來定義它的行為。
+    寫法範例：
+
+    a. HTML5 標準寫法(推薦，最簡潔)：
+    <code>&lt;img src="photo.jpg"&gt;</code>
+
+    b. XHTML 兼容寫法(在標籤最後加斜線)：
+    <code>&lt;img src="photo.jpg" /&gt;</code>
+
+    3. 常見的空元素列表：
+    以下是開發中最常使用的空元素：
+
+    <標籤> | 描述 | 常用屬性範例
+
+        a. <img> | 嵌入圖片 | src, alt, width, height
+        ex:
+        <img src="photo.jpg" alt="這是一張圖片" width="300">
+
+        註: src 是圖片路徑 (必要)，alt 是替代文字 (推薦)。
+
+        b. <br> | 換行 (Line Break) | 無
+        ex:
+        這是第一行<br>這是第二行
+
+        註：在文字中插入一個換行，不需要任何屬性。
+
+        c.
+        <hr> | 水平分隔線 | 無
+        ex:
+        第一章節內容...
+        <hr>
+        第二章節內容...
+
+        註：類似<br>，但
+        <hr>會在第一與第二章內容之間畫一條水平線，用於分隔內容。
+
+        d. <input> - 輸入框
+        ex:
+        <input type="text" placeholder="請輸入您的名字" value="">
+
+        <input>是最常用的表單元素。
+        - <input type> - 決定輸入框的類型：
+        例如"email"(電子郵件)、"text"(文字)、"password"(密碼)、"date"(日期) 等。
+        - <input placeholder> - 提示文字：
+        當輸入框為空時，顯示在框內的淺色提示訊息 (使用者輸入後會消失)。
+        - <input value> - 輸入框的初始/預填內容：
+        如果設定了這個值，網頁載入時，輸入框內就會直接出現這段文字。
+
+        e.
+        <meta> - 網頁元數據 (Metadata)
+        ex:
+        <meta charset="UTF-8">
+        <meta name="description" content="這是一個很棒的網站">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta>是用來 **設定網頁的編碼**，或者 **設定關鍵字描述** 等看不見的資訊。
+        -
+        <meta charset> - 設定網頁的文字編碼：
+        通常使用 "UTF-8" 以支援多國語言。
+        -
+        <meta name> /
+        <meta content> - 用來定義網頁的屬性：
+        例如 description (描述)、keywords (關鍵字)、author (作者) 等，這些資訊會被搜尋引擎 (Google) 使用。
+        -
+        <meta viewport> - 告訴瀏覽器如何控制頁面的顯示尺寸和縮放：
+        對於手機版網頁非常重要。
+
+        f.
+        <link> - 連結外部資源 (如 CSS)
+        ex:
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico">
+
+        <link>最常用途是將 CSS 樣式檔案連結到網頁中。
+        -
+        <link rel>: 告訴瀏覽器這個連結的「關係」是什麼。
+        例如 "stylesheet" 表示這是一個樣式表，"icon" 表示這是一個網站圖標。
+        -
+        <link href>: 外部資源的路徑 / 網址。
+
+        g.
+        <source> - 為 video/audio 指定來源
+        ex:
+        <video controls width="250">
+            <source src="movie.webm" type="video/webm">
+            <source src="movie.mp4" type="video/mp4">
+        </video>
+
+        <source> 標籤是用來為 <video> (影片) 或 <audio> (音樂) 元素指定 **多個媒體資源**。
+                - <video src> (Source): 指定媒體檔案的路徑 (URL)。
+                    - <video type> (MIME Type): 告訴瀏覽器這個檔案是什麼格式 (例如 "video/mp4" 或 "video/webm")。
+                        這很重要，因為如果瀏覽器看到不支援的檔案type，
+                        它就會直接跳過這個檔案，不用浪費時間去下載。
+                        Q：為什麼不直接寫在 video 裡？
+
+                        A：因為不同的瀏覽器支援的影片格式不同 (例如有的支援 .mp4，有的支援 .webm)。
+                        使用
+                        <source> 可以列出多種格式，瀏覽器會 **由上而下** 自動選擇第一個它能播放的檔案。
+
+                        4. 需要注意的事項
+
+                        a. 千萬不要加結束標籤！例如：
+
+                        <code>&lt;br&gt;&lt;/br&gt;</code>
+                        這是錯誤的！空元素不需要加上結尾標籤。
+
+                        b. 空元素無法包裹其他內容，包括其他標籤、文字、圖片等。例如：
+
+                        <img>文字</img>
+                        這是錯誤的！空元素無法包裹其他內容。
+
+                        c. 雖然在 HTML5 中 <img> src="photo.jpg" </img> (自閉合寫法) 是可選的，但是沒有必要。
+                        但在使用 React、Vue 等現代框架的 JSX 語法中，必須加上斜線 (例如 <br />)。

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 空元素 (Void Elements) 學習筆記</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #e67e22;
+            margin-top: 30px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+            color: #c7254e;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .important {
+            color: #d35400;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML 空元素 (Void Elements)</h1>
+
+    <p>這份筆記整理了關於 HTML 中「空元素」的重要知識。</p>
+
+    <h2>1. 什麼是空元素 (Void Elements)？</h2>
+    <p>空元素是指<strong>沒有結束標籤 (Closing Tag)</strong> 的 HTML 元素。它們不能包含任何內容（如文字或其他標籤），因為它們本身就是一個完整的獨立單元。</p>
+    <p>簡單來說，一般標籤有「開始」和「結束」，中間包著內容：<br>
+        <code>&lt;p&gt;這是有內容的段落&lt;/p&gt;</code>
+    </p>
+    <p>但空元素只有「開始」，沒有內容也不需要結束：<br>
+        <code>&lt;br&gt;</code> (換行)
+    </p>
+
+    <h2>2. 如何使用？</h2>
+    <p>使用空元素非常簡單，只需要寫標籤名稱即可。通常依賴<strong>屬性 (Attributes)</strong> 來定義它的行為。</p>
+
+    <div class="example-box">
+        <strong>寫法範例：</strong>
+        <ul>
+            <li>HTML5 標準寫法：<code>&lt;img src="photo.jpg"&gt;</code> (推薦，最簡潔)</li>
+            <li>XHTML 兼容寫法：<code>&lt;img src="photo.jpg" /&gt;</code> (在標籤最後加斜線，雖然 HTML5 允許但不強制)</li>
+        </ul>
+    </div>
+
+    <h2>3. 常見的空元素列表</h2>
+    <p>以下是開發中最常使用的空元素：</p>
+    <table>
+        <tr>
+            <th>標籤</th>
+            <th>描述</th>
+            <th>常用屬性範例</th>
+        </tr>
+        <tr>
+            <td><code>&lt;img&gt;</code></td>
+            <td>嵌入圖片</td>
+            <td>src, alt, width, height</td>
+        </tr>
+        <tr>
+            <td><code>&lt;br&gt;</code></td>
+            <td>換行 (Line Break)</td>
+            <td>無</td>
+        </tr>
+        <tr>
+            <td><code>&lt;hr&gt;</code></td>
+            <td>水平分隔線</td>
+            <td>無</td>
+        </tr>
+        <tr>
+            <td><code>&lt;input&gt;</code></td>
+            <td>輸入框</td>
+            <td>type, value, placeholder</td>
+        </tr>
+        <tr>
+            <td><code>&lt;meta&gt;</code></td>
+            <td>網頁元數據 (Metadata)</td>
+            <td>charset, name, content</td>
+        </tr>
+        <tr>
+            <td><code>&lt;link&gt;</code></td>
+            <td>連結外部資源 (如 CSS)</td>
+            <td>rel, href</td>
+        </tr>
+        <tr>
+            <td><code>&lt;source&gt;</code></td>
+            <td>為 video/audio 指定來源</td>
+            <td>src, type</td>
+        </tr>
+    </table>
+
+    <h2>4. 需要注意的事項</h2>
+    <ul>
+        <li><span class="important">千萬不要加結束標籤！</span> (例如：不要寫 <code>&lt;br&gt;&lt;/br&gt;</code>，這是錯誤的)。</li>
+        <li>空元素無法包裹其他內容。例如你不能用 <code>&lt;img&gt;文字&lt;/img&gt;</code> 來顯示文字。</li>
+        <li>雖然在 HTML5 中 <code>/&gt;</code> (自閉合寫法) 是可選的，但在使用 React、Vue 等現代框架的 JSX 語法中，<strong>必須</strong>加上斜線 (例如
+            <code>&lt;br /&gt;</code>)。
+        </li>
+    </ul>
+
+</body>
+
+</html>

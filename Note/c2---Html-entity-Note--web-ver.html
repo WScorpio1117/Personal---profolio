@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Entity (HTML 實體) 學習筆記</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #e67e22;
+            margin-top: 30px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+            color: #c7254e;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .important {
+            color: #d35400;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML 實體 (HTML Entities)</h1>
+
+    <p>這份筆記整理了關於 HTML 中「實體字符」的重要知識。</p>
+
+    <h2>1. 什麼是 HTML 實體 (HTML Entity)？</h2>
+    <p>HTML 實體是一段以 <strong>& (ampersand)</strong> 開頭，並以 <strong>; (semicolon)</strong> 結尾的特殊代碼。</p>
+    <p>為什麼需要它？主要有兩個原因：</p>
+    <ul>
+        <li><strong>保留字元 (Reserved Characters)</strong>：有些符號在 HTML 中有特殊意義（例如 <code>&lt;</code> 和 <code>&gt;</code>
+            用來定義標籤），如果你直接在文字中打這些符號，瀏覽器會誤以為是標籤而導致顯示錯誤。</li>
+        <li><strong>無法輸入的字元</strong>：有些符號在鍵盤上找不到（例如版權符號 ©），或者需要特殊的空格。</li>
+    </ul>
+
+    <h2>2. 如何使用？</h2>
+    <p>使用 HTML 實體有兩種方式：使用「實體名稱」或「實體編號」。</p>
+
+    <div class="example-box">
+        <strong>語法結構：</strong>
+        <ul>
+            <li><strong>實體名稱 (Entity Name)</strong>：<code>&entity_name;</code> (較好記，但在極舊的瀏覽器可能不支援)</li>
+            <li><strong>實體編號 (Entity Number)</strong>：<code>&#entity_number;</code> (支援度最好)</li>
+        </ul>
+        <p>範例：要顯示 "小於" 符號 ( < ) </p>
+                <p>寫法：<code>&amp;lt;</code> 或 <code>&amp;#60;</code></p>
+    </div>
+
+    <h2>3. 常見的 HTML 實體列表</h2>
+    <p>以下是開發中最常使用的實體符號：</p>
+    <table>
+        <tr>
+            <th>符號</th>
+            <th>描述 (Description)</th>
+            <th>實體名稱 (Entity Name)</th>
+            <th>實體編號 (Entity Number)</th>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>不換行空格 (Non-breaking space)</td>
+            <td><code>&amp;nbsp;</code></td>
+            <td><code>&amp;#160;</code></td>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>小於 (Less than)</td>
+            <td><code>&amp;lt;</code></td>
+            <td><code>&amp;#60;</code></td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>大於 (Greater than)</td>
+            <td><code>&amp;gt;</code></td>
+            <td><code>&amp;#62;</code></td>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>和號 (Ampersand)</td>
+            <td><code>&amp;amp;</code></td>
+            <td><code>&amp;#38;</code></td>
+        </tr>
+        <tr>
+            <td>&quot;</td>
+            <td>雙引號 (Double quotation mark)</td>
+            <td><code>&amp;quot;</code></td>
+            <td><code>&amp;#34;</code></td>
+        </tr>
+        <tr>
+            <td>&apos;</td>
+            <td>單引號 (Single quotation mark)</td>
+            <td><code>&amp;apos;</code></td>
+            <td><code>&amp;#39;</code></td>
+        </tr>
+        <tr>
+            <td>&copy;</td>
+            <td>版權符號 (Copyright)</td>
+            <td><code>&amp;copy;</code></td>
+            <td><code>&amp;#169;</code></td>
+        </tr>
+    </table>
+
+    <h2>4. 需要注意的事項</h2>
+    <ul>
+        <li><span class="important">大小寫敏感</span>：HTML 實體名稱是<strong>區分大小寫</strong>的。例如 <code>&amp;copy;</code> 會顯示 ©，但
+            <code>&amp;COPY;</code> 可能無效。
+        </li>
+        <li><strong>關於空格</strong>：在 HTML 中，連續輸入多個空白鍵只會被視為一個空格。如果你需要強制顯示多個空格，必須使用 <code>&amp;nbsp;</code> (Non-Breaking
+            SPace)。此外，<code>&amp;nbsp;</code> 還能防止文字在該空格處被自動換行。</li>
+        <li><strong>名稱 vs 編號</strong>：通常建議使用<strong>實體名稱</strong> (如
+            <code>&amp;lt;</code>)，因為它比較好記憶。除非是很罕見的符號，才需要查表使用編號。
+        </li>
+    </ul>
+
+</body>
+
+</html>
